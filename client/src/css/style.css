@@ -192,7 +192,7 @@ h1 {
   background-color: #31a9e1;
 }
 
-[hidden] {
+.hidden {
   display: none;
 }
 
