@@ -28,7 +28,6 @@ export const putDb = async (id, content) => {
 
   // confirm the request worked
   const result = await request;
-  console.log("Results!", result);
   return result;
 };
 
@@ -48,7 +47,6 @@ export const getDb = async () => {
 
   // confirm the request worked
   const result = await request;
-  console.log("Results!", result);
   return result;
 };
 
