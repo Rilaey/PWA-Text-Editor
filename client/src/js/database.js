@@ -43,11 +43,11 @@ export const getDb = async () => {
   const store = transact.objectStore("jate");
 
   // getAll() built in method to get all data in db
-  const request = store.getAll();
+  const request = store.getAll(1);
 
   // confirm the request worked
   const result = await request;
-  return result;
+  return result?.value;
 };
 
 initdb();
