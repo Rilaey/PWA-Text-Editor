@@ -33,14 +33,14 @@ registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 // TODO: Implement asset caching
 // Handle images:
 const imageRoute = new Route(({ request }) => {
-  return request.destination === 'image'
+  return request.destination === 'images'
 }, new StaleWhileRevalidate({
   cacheName: 'images'
 }));
 
 // Handle scripts:
 const scriptsRoute = new Route(({ request }) => {
-  return request.destination === 'script';
+  return request.destination === 'js';
 }, new CacheFirst({
   cacheName: 'scripts'
 }));
@@ -53,6 +53,4 @@ const stylesRoute = new Route(({ request }) => {
 }));
 
 // Register routes
-registerRoute(imageRoute);
-registerRoute(scriptsRoute);
-registerRoute(stylesRoute);
+registerRoute(imageRoute, scriptsRoute, stylesRoute);
